@@ -1,0 +1,155 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* universal */
+    color: #212121;
+    font: 400 16px/24px Roboto, sans-serif;
+    list-style-type: none;
+}
+
+/* navbar */
+
+.navwrap {
+    width: 100%;
+    height: 48px;
+    position: fixed;
+    background: #ffffff;
+    border-bottom: 1px solid #bbbbbb;
+    z-index: 1;
+}
+
+.navbar {
+    max-width: 1400px;
+    height: 48px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    display: flex;
+}
+
+
+/* slogan */
+
+.slogan {
+    width: 100%;
+    height: 276px;
+    box-shadow: 0 5px 15px #949494;
+}
+
+.title {
+    position: relative;
+    padding: 40px 24px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.title h1,
+.title h1 strong {
+    font: 400 44px/52px Google sans, sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.title h1 strong {
+    font-weight: bolder;
+}
+
+.search {
+    height: 88px;
+}
+
+
+/* events & news */
+
+.events,
+.news {
+    background: #f7f7f7;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header {
+    display: flex;
+    margin: 0 0 32px;
+    justify-content: space-between;
+    justify-self: center;
+    width: 90vw;
+}
+
+.contents {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 40px;
+}
+
+.contents div {
+    height: 618px;
+    background: #d3d3d3;
+}
+
+/* footer */
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footercontents {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.links,
+.plans,
+.controlpanel,
+.googledev {
+    height: 248px;
+}
+
+.footernav {
+    height: 64px;
+    background: #455a64;
+}
+
+/* media query */
+
+@media only screen and (min-width: 1600px) {
+
+    header,
+    .contents,
+    .footercontents {
+        width: 1400px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .contents {
+        width: 90vw;
+    }
+
+    .footercontents {
+        width: 90vw;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .contents {
+        width: 92vw;
+        grid-template-columns: auto;
+    }
+
+    .footercontents {
+        width: 92vw;
+    }
+}
