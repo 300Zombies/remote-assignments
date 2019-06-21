@@ -5,6 +5,12 @@ function init() {
     const message = document.querySelector(".welcome h1");
     const burger = document.querySelector(".burger");
     const items = document.querySelector(".items");
+    const hiddenBoxes = document.querySelector(".hidden-boxes");
+    const btn = document.querySelector(".btn");
+
+    btn.addEventListener("click", () => {
+        hiddenBoxes.classList.toggle("hidden-boxes");
+    });
 
     message.addEventListener("click", () => {
         if (message.textContent !== "Have a Good Time!") {
@@ -16,10 +22,6 @@ function init() {
 
     burger.addEventListener("click", () => {
         items.classList.toggle("items-activate");
-        // TODO: burger -> cross
+        burger.classList.toggle("burger-activate");
     });
-}
-
-function action() {
-    console.log("function not completed yet haha!")
 }
