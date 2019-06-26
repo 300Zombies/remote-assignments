@@ -5,32 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sum</title>
+    <title>AJAX</title>
     <script>
         /*** XMLHttpRequest method ***/
+        // function calculate() {
+        //     let userInput = document.querySelector("#userInput").value;
+        //     let result = document.querySelector("#content");
+        //     let xhr = new XMLHttpRequest;
+        //     xhr.open("GET", `http://localhost:3000/getData?number=${userInput}`);
+        //     xhr.send();
+        //     xhr.onreadystatechange = function () {
+        //         if (xhr.readyState === XMLHttpRequest.DONE) {
+        //             if (xhr.status === 200) {
+        //                 result.innerHTML = xhr.responseText;
+        //             } else {
+        //                 result.innerHTML = "Request failed!";
+        //             }
+        //         }
+        //     }
+        // }
+
+        /*** Fetch method ***/
         function calculate() {
             let userInput = document.querySelector("#userInput").value;
             let result = document.querySelector("#content");
-            let xhr = new XMLHttpRequest;
-            xhr.open("GET", `http://localhost:3000/getData?number=${userInput}`);
-            xhr.send();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        result.innerHTML = xhr.responseText
-                    } else {
-                        result.innerHTML = "Request failed!"
-                    }
-                }
-            }
+            let src = `http://localhost:3000/getData?number=${userInput}`;
+            fetch(src).then((res) => {
+                return res.text();
+            }).then((text) => {
+                result.innerHTML = text;
+            }).catch((error) => {
+                console.error(error);
+            });
         }
-
-        /*** Fetch method ***/
-        // let src = "http://localhost:3000/getData?number=10";
-        // fetch(src).then((res) => {
-        //     console.log(res);
-        //     return res.text();
-        // });
     </script>
 </head>
 
@@ -39,7 +46,6 @@
     <p id="content"></p>
     <input type="text" id="userInput" value="10">
     <input type="button" value="calculate!" onclick="calculate(userInput)">
-
 </body>
 
 </html>
