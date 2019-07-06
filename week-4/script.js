@@ -18,8 +18,7 @@ delayedResult(-5, 10, 2000, function (result) {
 function ajax(src, callback) {
     fetch(src).then(res => {
         // console.log(res.text()); -> cause error
-        /*** Response methode like 'json', 'text'
-         can be called ONLY ONCE ***/
+        /*** Response methode like 'json', 'text' can be called ONLY ONCE ***/
         return res.text();
     }).then((text) => {
         const products = JSON.parse(text);
